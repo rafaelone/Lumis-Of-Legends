@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import background from '../../assets/images/background.jpg';
+import background from '../../assets/images/noc-wallpaper.jpg';
 // import backgroundGif from '../../assets/gif/vayne.gif';
 
 export const ContainerProfile = styled.div`

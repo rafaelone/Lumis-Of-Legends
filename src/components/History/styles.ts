@@ -17,6 +17,7 @@ export const WrapperHistory = styled.div`
   width: 100%;
   display: flex;
   margin: 15px 0 0 40px;
+  padding-top: 60px;
 `;
 
 export const ContainerListHistory = styled.ul`

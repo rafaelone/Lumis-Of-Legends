@@ -7,7 +7,7 @@ export default {
     babyBlueColor: '#0acbe6',
   },
   fonts: {
-    Roboto: 'Roboto',
+    Domine: 'Domine',
   },
   weight: {
     regular: 400,

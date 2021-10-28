@@ -41,7 +41,7 @@ export const Aside = styled.aside`
   }
 
   > span {
-    font-family: ${({theme}) => theme.fonts.Roboto};
+    font-family: ${({theme}) => theme.fonts.Domine};
     font-weight: ${({theme}) => theme.weight.bold};
     font-size: 24px;
     margin-bottom: 32px;
@@ -52,7 +52,7 @@ export const Aside = styled.aside`
   }
 
   small {
-    font-family: Roboto, sans-serif;
+    font-family: Domine, sans-serif;
     color: ${({theme}) => theme.colors.errorMenssage};
     margin-bottom: 8rem;
     font-size: 14px;

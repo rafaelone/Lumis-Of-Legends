@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  padding: 0 70px;
+  padding: 60px 50px 0 70px;
 
   h1 {
     color: #f0e6d2;
@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 
   p {
-    font-family: Roboto, sans-serif;
+    font-family: Domine, sans-serif;
     margin: 2rem;
     font-size: 1.2rem;
     color: #f0e6d2;

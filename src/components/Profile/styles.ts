@@ -5,7 +5,8 @@ export const WrapperProfile = styled.div`
   max-width: 1065px;
   width: 100%;
   height: 100vh;
-  position: relative;
+  position: absolute;
+  top: 0;
 `;
 
 export const ContainerNameBanner = styled.div`
@@ -123,6 +124,16 @@ export const ContainerProfileInfos = styled.div`
       .icon-banner {
         width: 65px;
         padding-top: 60px;
+      }
+      &:hover {
+        cursor: pointer;
+        background: linear-gradient(
+          0deg,
+          rgba(235, 235, 244, 0.1348914566),
+          hsla(0, 0%, 100%, 0) 70%
+        );
+
+        transition-duration: 0.2s;
       }
     }
   }

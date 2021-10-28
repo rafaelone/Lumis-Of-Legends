@@ -19,7 +19,7 @@ export const ContainerGroups = styled.ul`
       height: 46px;
       vertical-align: middle;
       font-size: 14px;
-      font-family: ${({theme}) => theme.fonts.Roboto};
+      font-family: ${({theme}) => theme.fonts.Domine};
       &.abreviation {
         padding-left: 12.8px;
         color: #aa9261;
