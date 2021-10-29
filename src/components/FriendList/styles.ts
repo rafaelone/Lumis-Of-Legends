@@ -46,13 +46,27 @@ export const Footer = styled.footer`
   border: 1px solid #1e282d;
   height: 43px;
   bottom: 33px;
+  background: #1e282d;
 
+  display: flex;
   img {
-    width: 20px;
-    padding: 0.8rem;
+    padding: 0.65rem;
     background-color: #1e2328;
     transition-duration: 0.2s;
     border: 1px solid #c8a96b;
     cursor: pointer;
+  }
+
+  span {
+    width: 86px;
+    height: 50px;
+    font-size: 14px;
+    color: #34353b;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-align: center;
   }
 `;

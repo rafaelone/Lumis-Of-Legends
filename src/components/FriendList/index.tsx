@@ -31,10 +31,19 @@ export function FriendList(): ReactElement {
 
         <Friends />
         <Footer>
-          <img src={ChatIcon} alt="Chat" />
-          <img src={MissionsIcon} alt="Missões" />
-          <img src={VoiceIcon} alt="Voice" />
-          <img src={BugIcon} alt="Bug" />
+          <div>
+            <img src={ChatIcon} alt="Chat" />
+          </div>
+          <div>
+            <img src={MissionsIcon} alt="Missões" />
+          </div>
+          <div>
+            <img src={VoiceIcon} alt="Voice" />
+          </div>
+          <span>V 1.0</span>
+          <div>
+            <img src={BugIcon} alt="Bug" />
+          </div>
         </Footer>
       </div>
     </Container>
