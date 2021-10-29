@@ -150,6 +150,7 @@ export function AuthProvider({children}: IAuthProviderProps): JSX.Element {
   const signOut = useCallback(async () => {
     try {
       await api.post('/lumis/api/rest/lumlogout', {
+        withCredentials: true,
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',

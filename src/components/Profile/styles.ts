@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Banner from '../../assets/images/banner-profile.png';
 
 export const WrapperProfile = styled.div`
-  max-width: 1065px;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -58,10 +57,10 @@ export const ContainerNameBanner = styled.div`
 `;
 
 export const ContainerProfileInfos = styled.div`
-  max-width: 790px;
   width: 100%;
   position: absolute;
   right: 0;
+  left: 0;
   bottom: 5%;
 
   ul {

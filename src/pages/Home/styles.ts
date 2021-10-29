@@ -16,3 +16,27 @@ export const ContainerHome = styled.div`
 
   z-index: 0;
 `;
+
+export const LogOutContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 70px;
+
+  button {
+    padding: 10px;
+    font-family: Domine, sans-serif;
+    border: 1px solid #c8a96b;
+    background: transparent;
+    color: #c8a96b;
+    font-size: 14px;
+    width: 300px;
+    display: block;
+    margin-top: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+`;
