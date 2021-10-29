@@ -4,11 +4,13 @@ import {Form} from '@unform/web';
 import {FiArrowRight, FiUser} from 'react-icons/fi';
 import {RiLockPasswordLine} from 'react-icons/ri';
 import * as Yup from 'yup';
+import {useHistory} from 'react-router-dom';
 import {Aside, ButtonLogin, ContainerSignIn} from './styles';
 import {Input} from '../../components/Input';
 import {getValidationErros} from '../../utils/getValidationErros';
 
 import Logo from '../../assets/images/logo.png';
+import {useAuth} from '../../hooks/auth';
 
 type FormData = {
   username: string;
@@ -17,6 +19,9 @@ type FormData = {
 
 export function SignIn(): ReactElement {
   const formRef = useRef<FormHandles>(null);
+
+  const {signIn, signOut} = useAuth();
+  const history = useHistory();
 
   async function handleSubmit(data: FormData): Promise<void> {
     try {
@@ -27,6 +32,10 @@ export function SignIn(): ReactElement {
       });
 
       await schema.validate(data, {abortEarly: false});
+
+      await signIn(data);
+
+      history.push('/');
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErros(err);
@@ -57,11 +66,15 @@ export function SignIn(): ReactElement {
           <ButtonLogin type="submit">
             <FiArrowRight color="#fff" size={52} />
           </ButtonLogin>
+
           <small>
             Enter a fictitious username! This application is not connected with
             Riot Games APIS because of its usage policy.
           </small>
         </Form>
+        <button type="button" onClick={signOut}>
+          Sair
+        </button>
       </Aside>
     </ContainerSignIn>
   );
