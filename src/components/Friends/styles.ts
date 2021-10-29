@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ContainerFriends = styled.div`
+  height: calc(100vh - 80px);
+  overflow: auto;
   span {
     color: #e4dbc8;
     text-transform: uppercase;

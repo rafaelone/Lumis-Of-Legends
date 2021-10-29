@@ -20,8 +20,6 @@ export function Route({
 }: RouteProps): JSX.Element {
   const {session} = useAuth();
 
-  console.log(session);
-
   return (
     <ReactDOMRoute
       {...rest}

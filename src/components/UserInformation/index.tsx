@@ -8,9 +8,11 @@ import {
   StatusContainer,
 } from './styles';
 import PlayerBorder from '../../assets/images/playerBorder.png';
+import {useAuth} from '../../hooks/auth';
 
 export function UserInformation(): ReactElement {
   const [online, setOnline] = useState<boolean>(true);
+  const {session} = useAuth();
 
   function handleChangeStatus(): void {
     setOnline(!online);
@@ -28,7 +30,7 @@ export function UserInformation(): ReactElement {
       </IconPlayerContainer>
 
       <StatusContainer>
-        <span>OhKiDó</span>
+        <span>{session.firstName}</span>
         <Status isOnline={online}>
           <button type="button" onClick={handleChangeStatus}>
             {online ? 'On-line' : 'Ausente'}

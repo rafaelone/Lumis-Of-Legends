@@ -20,7 +20,7 @@ type FormData = {
 export function SignIn(): ReactElement {
   const formRef = useRef<FormHandles>(null);
 
-  const {signIn, signOut} = useAuth();
+  const {signIn} = useAuth();
   const history = useHistory();
 
   async function handleSubmit(data: FormData): Promise<void> {
@@ -72,9 +72,6 @@ export function SignIn(): ReactElement {
             Riot Games APIS because of its usage policy.
           </small>
         </Form>
-        <button type="button" onClick={signOut}>
-          Sair
-        </button>
       </Aside>
     </ContainerSignIn>
   );

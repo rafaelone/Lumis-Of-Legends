@@ -52,6 +52,7 @@ export function AuthProvider({children}: IAuthProviderProps): JSX.Element {
     id: '',
     email: '',
   });
+  console.log(session);
 
   const [loading, setLoading] = useState<boolean>(true);
   const history = useHistory();
@@ -62,32 +63,31 @@ export function AuthProvider({children}: IAuthProviderProps): JSX.Element {
         withCredentials: true,
       })
       .then(response => {
-        console.log(response.data);
-        // if (response.data.login === 'guest') {
-        //   setSession({
-        //     isLogged: false,
-        //     firstName: '',
-        //     lastName: '',
-        //     phone: '',
-        //     mobile: '',
-        //     institution: '',
-        //     id: '',
-        //     email: '',
-        //   });
-        //   setLoading(false);
-        // } else {
-        //   setSession({
-        //     isLogged: true,
-        //     firstName: response.data.firstName,
-        //     lastName: response.data.lastName,
-        //     phone: '',
-        //     institution: '',
-        //     mobile: '',
-        //     id: response.data.id,
-        //     email: response.data.login,
-        //   });
-        //   setLoading(false);
-        // }
+        if (response.data.login === 'guest') {
+          setSession({
+            isLogged: false,
+            firstName: '',
+            lastName: '',
+            phone: '',
+            mobile: '',
+            institution: '',
+            id: '',
+            email: '',
+          });
+          setLoading(false);
+        } else {
+          setSession({
+            isLogged: true,
+            firstName: response.data.firstName,
+            lastName: response.data.lastName,
+            phone: '',
+            institution: '',
+            mobile: '',
+            id: response.data.id,
+            email: response.data.login,
+          });
+          setLoading(false);
+        }
       })
       .catch(err => {
         return err;
@@ -109,30 +109,29 @@ export function AuthProvider({children}: IAuthProviderProps): JSX.Element {
 
   const signIn = useCallback(async (data: SignInCredentials) => {
     try {
-      console.log(data);
       const formData = new URLSearchParams();
       formData.append('username', data.username);
       formData.append('password', data.password);
-      console.log('SALVE');
-      console.log(formData);
 
-      await api.post('/api/lol/v1/auth/login', formData);
-      console.log('dadasdasd');
-      // const response = await api.get(
-      //   '/lumis/api/rest/lumis/authentication/users/current',
-      //   {withCredentials: true},
-      // );
+      await api.post('/api/lol/v1/auth/login', formData, {
+        withCredentials: true,
+      });
 
-      // setSession({
-      //   isLogged: true,
-      //   firstName: response.data.firstName,
-      //   lastName: response.data.lastName,
-      //   phone: '',
-      //   institution: '',
-      //   mobile: '',
-      //   id: response.data.id,
-      //   email: response.data.login,
-      // });
+      const response = await api.get(
+        '/lumis/api/rest/lumis/authentication/users/current',
+        {withCredentials: true},
+      );
+
+      setSession({
+        isLogged: true,
+        firstName: response.data.firstName,
+        lastName: response.data.lastName,
+        phone: '',
+        institution: '',
+        mobile: '',
+        id: response.data.id,
+        email: response.data.login,
+      });
     } catch (err) {
       setSession({
         isLogged: false,

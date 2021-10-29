@@ -7,6 +7,7 @@ import {
 } from './styles';
 
 import FriendListJson from '../../jsons/friends.json';
+import {Groups} from '../Groups';
 
 type FriendList = {
   id: number;
@@ -20,6 +21,7 @@ export function Friends(): ReactElement {
 
   return (
     <ContainerFriends>
+      <Groups />
       <General>General (9/15)</General>
       <ul>
         {list.map(friend => (

@@ -10,7 +10,7 @@ import ChatIcon from '../../assets/icons/chat.png';
 import MissionsIcon from '../../assets/icons/missions.png';
 import VoiceIcon from '../../assets/icons/voice.png';
 import BugIcon from '../../assets/icons/bug.png';
-import {Groups} from '../Groups';
+
 import {Friends} from '../Friends';
 
 export function FriendList(): ReactElement {
@@ -28,7 +28,7 @@ export function FriendList(): ReactElement {
             <img src={FinderIcon} alt="Buscar amigo" />
           </div>
         </Social>
-        <Groups />
+
         <Friends />
         <Footer>
           <img src={ChatIcon} alt="Chat" />

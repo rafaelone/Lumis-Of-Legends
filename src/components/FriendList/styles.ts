@@ -41,7 +41,18 @@ export const Social = styled.div`
   }
 `;
 export const Footer = styled.footer`
+  position: absolute;
   width: 99%;
   border: 1px solid #1e282d;
   height: 43px;
+  bottom: 33px;
+
+  img {
+    width: 20px;
+    padding: 0.8rem;
+    background-color: #1e2328;
+    transition-duration: 0.2s;
+    border: 1px solid #c8a96b;
+    cursor: pointer;
+  }
 `;
