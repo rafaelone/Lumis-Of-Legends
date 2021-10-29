@@ -47,6 +47,7 @@ export function OverviewProfile(): ReactElement {
                 <span>Nickname</span>
                 <img src={BorderPlatinum} alt="borda-ranked" />
                 <img src={IconProfile} alt="ícone-invocador" />
+                <span className="tier">II</span>
               </div>
             </div>
           </ContainerNameBanner>

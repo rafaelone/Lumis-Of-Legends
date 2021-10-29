@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import {app, BrowserWindow, systemPreferences} from 'electron';
+import {app, BrowserWindow} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -21,8 +21,6 @@ function createWindow() {
   });
   mainWindow.maximize();
 
-
-
   if (process.env.NODE_ENV === 'development') {
     mainWindow.loadURL('http://localhost:4000');
     mainWindow.webContents.openDevTools();
@@ -35,8 +33,6 @@ function createWindow() {
       }),
     );
   }
-
-
 
   mainWindow.on('closed', () => {
     mainWindow = null;

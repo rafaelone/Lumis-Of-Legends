@@ -34,6 +34,13 @@ export const ContainerNameBanner = styled.div`
         font-weight: 700;
         letter-spacing: 0.5px;
       }
+      .tier {
+        position: absolute;
+        z-index: 10;
+        bottom: 40px;
+        font-size: 14px;
+        padding-left: 3px;
+      }
       img {
         &:nth-child(2) {
           z-index: 1;
